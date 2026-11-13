@@ -73,39 +73,36 @@ flowchart TD
 ```
 
 ---
-
 ## ⚙️ 4. Software Algorithm / Workflow
-
-The following workflow follows the seven stages of the software algorithm presented in the Phase II project review.
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[Sweep Servo Step by Step]
-    B --> C[Take 5 Echo Readings and Average]
+    A([Start]) --> B[Servo Scanning Step by Step]
+    B --> C[Take 5 Ultrasonic Readings and Calculate Average]
     C --> D{Object Within Range?}
     D -->|No| B
     D -->|Yes| E[Map Angle and Move Pan-Tilt]
-    E --> F[Confirm Over 2 Scans]
-    F --> G[Alert and Capture Visual Information]
-    G --> H[Log Detection Event to Cloud]
-    H --> I[Send Visual Information to Server Room]
-    I --> J[Display Pictorial Representation]
-    J --> K[Start 30-Second Review Window]
-    K --> L[Controller Reviews Detected Object]
-    L --> M[Record Intervention and Monitoring Status]
+    E --> F[Confirm Detection Over 2 Scans]
+    F --> G[Activate Alerts and Capture Image]
+    G --> H[Transmit Data to Cloud]
+    H --> I[Server Room Visual Monitoring]
+    I --> J[30-Second Controller Review]
+    J --> K[Relay-Controlled Response Subsystem]
+    K --> L[Solenoid Gun Prototype]
+    L --> M[Resume Surveillance]
     M --> B
 ```
 
 ### Accuracy Techniques
 
-- Median / average of multiple ultrasonic echo readings.
-- Five echo readings averaged at each scanning angle.
-- Temperature-compensated speed-of-sound calculation.
+- Average of five ultrasonic readings.
+- Temperature-compensated distance measurement.
 - Calibrated angle-to-servo mapping.
-- Consecutive-scan confirmation to reduce false alerts.
-- Servo settling delay for improved positioning.
+- Two-scan confirmation to reduce false alerts.
+```
 
----
+
+    
 
 ## ☁️ 5. IoT and Cloud Monitoring
 
