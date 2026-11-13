@@ -99,7 +99,7 @@ flowchart TD
 - Temperature-compensated distance measurement.
 - Calibrated angle-to-servo mapping.
 - Two-scan confirmation to reduce false alerts.
-```
+  
 
 
     
